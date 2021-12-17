@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Рецепты</title>
+</head>
+<body bgcolor="#aaffff">
+<font size="4">
+<p><font size="5" color="green"><a href="http://127.0.0.1:8000/">Меню</a></font></p>
+
+{{ product }} : <br>
+{% for ingr, val in recipe.items %}
+    <p>* {{ ingr }}: {{ val }}</p>
+{% empty %}
+    <p>Такого рецепта не знаю :(</p>
+{% endfor %}
+
+    <br>
+
+<p><a href="?servings=2">| 2 порции | </a>
+    <a href="?servings=3">3 порции | </a>
+    <a href="?servings=4">4 порции | </a>
+    <a href="?servings=5">5 порций | </a>
+    <a href="?servings=6">6 порций | </a>
+    <a href="?servings=7">7 порций | </a>
+    <a href="?servings=8">8 порций | </a>
+    <a href="?servings=9">9 порций | </a>
+    <a href="?servings=10">10 порций | </a>
+</p>
+
+Для большего числа порций в адресной строке после последнего слэша впишите
+<p><font size="5" color="blue">?servings=число порций</font></p>
+Например:<br>
+<p><font size="5" color="blue">127.0.0.1:8000/show/Макароны/?servings=6</font></p>
+    </font>
+</body>
+</html>
